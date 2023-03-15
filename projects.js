@@ -984,7 +984,82 @@ function failure(){
 
  async();
  */
+/* 
  fetch('https://api-thirukkural.vercel.app/api?num=4')
  .then(re => re.json())
  .then(ms => console.log(ms.line1,ms.line2))
- .catch(err => console.log(err))
+ .catch(err => console.log(err)) */
+
+ /* fetch('https://bhagavad-gita3.p.rapidapi.com/v2/chapters/')
+ .then(res => res.json())
+ .then(ms => ms)
+ .catch(err => console.log(err));
+
+ let n=prompt("Enter the String:");
+   regexp = /^[A-Z]/;
+   if(regexp.test(n)){
+	alert("Upper Case");
+   }
+   else{
+	alert("Lower Case");
+   }
+   */
+
+/*    let n=prompt("Enter a String:");
+   regexp =/[aeiou]/gi;
+   if(regexp.test(n)){
+	alert("Vowels");
+   }
+   else{
+	alert("Consonents");
+   } */
+/* 
+   let myPromise = new promise(function(resolve,reject){
+
+	let h=1;
+	if(h){
+		resolve();
+		console.log(setTimeout("Yes Its fine"),3000);
+	}
+	else{
+		reject();
+		alert("Its not Fine");
+	}
+   });
+   myPromise.then( value => console.log(value))
+   myPromise.then(value => console.log(value))
+   .catch(err => console.log(err));
+
+   let n = document.querySelector("#loader");
+   document.getElementById("x").onclick = function{
+	n.style.display = "none";
+   } */
+
+   let ul = document.getElementById("ul");
+   let f= document.getElementById("add");
+   let input = document.querySelector("input");
+
+   f.addEventListener('click',() =>{
+	let item = input.value;
+	input.value ='';
+	let d = document.createElement('li');
+	let litext = document.createElement('span');
+	let listbtn = document.createElement('button');
+
+	d.appendChild(litext);
+	litext.textContent = item;
+	d.appendChild(listbtn);
+	listbtn.textContent = 'Delete';
+	ul.appendChild(d);
+
+	listbtn.addEventListener('click',()=>{
+		ul.removeChild(d);
+	});
+
+   });
+
+   let parsed = JSON.parse();
+   fetch('https://scrape.abstractapi.com/v1/? api_key = YOUR_API_KEY& url = https://www.apple.com')
+   .then((res)=>res.json())
+   .then((msg)=>msg.setup)
+   .catch((err)=>console.log(err));
