@@ -1034,7 +1034,7 @@ function failure(){
    document.getElementById("x").onclick = function{
 	n.style.display = "none";
    } */
-
+/* 
    let ul = document.getElementById("ul");
    let f= document.getElementById("add");
    let input = document.querySelector("input");
@@ -1062,4 +1062,319 @@ function failure(){
    fetch('https://scrape.abstractapi.com/v1/? api_key = YOUR_API_KEY& url = https://www.apple.com')
    .then((res)=>res.json())
    .then((msg)=>msg.setup)
-   .catch((err)=>console.log(err));
+   .catch((err)=>console.log(err)); */
+   /* const reviews = [
+	{
+	  id: 1,
+	  name: 'Ragul P',
+	  job: 'web developer',
+	  img: '',
+	  text: "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+	},
+	{
+	  id: 2,
+	  name: 'Dharu',
+	  job: 'web designer',
+	  img: '',
+	  text: 'Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.',
+	},
+	{
+	  id: 3,
+	  name: 'Sri',
+	  job: 'intern',
+	  img: '',
+	  text: 'Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.',
+	},
+	{
+	  id: 4,
+	  name: 'Sachin',
+	  job: 'the boss',
+	  img: '',
+	  text: 'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
+	},
+  ];
+  // select items
+  const img = document.getElementById('person-img');
+  const author = document.getElementById('author');
+  const job = document.getElementById('job');
+  const info = document.getElementById('info');
+  
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const randomBtn = document.querySelector('.random-btn');
+  
+  // set starting item
+  let currentItem = 0;
+  
+  // load initial item
+  window.addEventListener('DOMContentLoaded', function () {
+	const item = reviews[currentItem];
+	img.src = item.img;
+	author.textContent = item.name;
+	job.textContent = item.job;
+	info.textContent = item.text;
+  });
+  
+  // show person based on item
+  function showPerson(person) {
+	const item = reviews[person];
+	img.src = item.img;
+	author.textContent = item.name;
+	job.textContent = item.job;
+	info.textContent = item.text;
+  }
+  // show next person
+  nextBtn.addEventListener('click', function () {
+	currentItem++;
+	if (currentItem > reviews.length - 1) {
+	  currentItem = 0;
+	}
+	showPerson(currentItem);
+  });
+  // show prev person
+  prevBtn.addEventListener('click', function () {
+	currentItem--;
+	if (currentItem < 0) {
+	  currentItem = reviews.length - 1;
+	}
+	showPerson(currentItem);
+  });
+  // show random person
+  /* 
+  randomBtn.addEventListener('click', function () {
+	console.log('hello');
+  
+	currentItem = Math.floor(Math.random() * reviews.length);
+	showPerson(currentItem);
+  });
+
+
+      var rows = prompt("How many rows for your multiplication table?");
+    var cols = prompt("How many columns for your multiplication table?");
+    if(rows == "" || rows == null)
+   		 rows = 10;
+    if(cols== "" || cols== null)
+   		 cols = 10;
+    createTable(rows, cols);
+    function createTable(rows, cols)
+    {
+      var j=1;
+      var output = "<table border='1' width='500' cellspacing='0'cellpadding='5'>";
+      for(i=1;i<=rows;i++)
+      {
+    	output = output + "<tr>";
+        while(j<=cols)
+        {
+  		  output = output + "<td>" + i*j + "</td>";
+   		  j = j+1;
+   		}
+   		 output = output + "</tr>";
+   		 j = 1;
+    }
+    output = output + "</table>";
+    document.write(output);
+    }
+ */
+
+/* 	function generateUniqueId() {
+		return Math.random().toString(36).substr(2, 9);
+	  }
+	const uniqueId = generateUniqueId();
+	console.log(uniqueId);
+ 
+
+	(function() {
+		var questions = [{
+		  question: "What is 2*5?",
+		  choices: [2, 5, 10, 15, 20],
+		  correctAnswer: 2
+		}, {
+		  question: "What is 3*6?",
+		  choices: [3, 6, 9, 12, 18],
+		  correctAnswer: 4
+		}, {
+		  question: "What is 8*9?",
+		  choices: [72, 99, 108, 134, 156],
+		  correctAnswer: 0
+		}, {
+		  question: "What is 1*7?",
+		  choices: [4, 5, 6, 7, 8],
+		  correctAnswer: 3
+		}, {
+		  question: "What is 8*8?",
+		  choices: [20, 30, 40, 50, 64],
+		  correctAnswer: 4
+		}];
+		
+		var questionCounter = 0; //Tracks question number
+		var selections = []; //Array containing user choices
+		var quiz = $('#quiz'); //Quiz div object
+		
+		displayNext();
+		
+		$('#next').on('click', function (e) {
+		  e.preventDefault();
+		  
+		  if(quiz.is(':animated')) {        
+			return false;
+		  }
+		  choose();
+		  
+		  if (isNaN(selections[questionCounter])) {
+			alert('Please make a selection!');
+		  } else {
+			questionCounter++;
+			displayNext();
+		  }
+		});
+		
+		$('#prev').on('click', function (e) {
+		  e.preventDefault();
+		  
+		  if(quiz.is(':animated')) {
+			return false;
+		  }
+		  choose();
+		  questionCounter--;
+		  displayNext();
+		});
+		
+		$('#start').on('click', function (e) {
+		  e.preventDefault();
+		  
+		  if(quiz.is(':animated')) {
+			return false;
+		  }
+		  questionCounter = 0;
+		  selections = [];
+		  displayNext();
+		  $('#start').hide();
+		});
+		
+		$('.button').on('mouseenter', function () {
+		  $(this).addClass('active');
+		});
+		$('.button').on('mouseleave', function () {
+		  $(this).removeClass('active');
+		});
+		
+		
+		function createQuestionElement(index) {
+		  var qElement = $('<div>', {
+			id: 'question'
+		  });
+		  
+		  var header = $('<h2>Question ' + (index + 1) + ':</h2>');
+		  qElement.append(header);
+		  
+		  var question = $('<p>').append(questions[index].question);
+		  qElement.append(question);
+		  
+		  var radioButtons = createRadios(index);
+		  qElement.append(radioButtons);
+		  
+		  return qElement;
+		}
+		
+		function createRadios(index) {
+		  var radioList = $('<ul>');
+		  var item;
+		  var input = '';
+		  for (var i = 0; i < questions[index].choices.length; i++) {
+			item = $('<li>');
+			input = '<input type="radio" name="answer" value=' + i + ' />';
+			input += questions[index].choices[i];
+			item.append(input);
+			radioList.append(item);
+		  }
+		  return radioList;
+		}
+		
+		function choose() {
+		  selections[questionCounter] = +$('input[name="answer"]:checked').val();
+		}
+		
+		function displayNext() {
+		  quiz.fadeOut(function() {
+			$('#question').remove();
+			
+			if(questionCounter < questions.length){
+			  var nextQuestion = createQuestionElement(questionCounter);
+			  quiz.append(nextQuestion).fadeIn();
+			  if (!(isNaN(selections[questionCounter]))) { 
+				*/
+
+				const APIURL = 'https://api.github.com/users/'
+				const main = document.getElementById('main')
+				const form = document.getElementById('form')
+				const search = document.getElementById('search')
+				async function getUser(username) {
+				try {
+				const { data } = await axios(APIURL + username)
+				createUserCard(data)
+				getRepos(username)
+				} catch(err) {
+				if(err.response.status == 404) {
+				createErrorCard('No profile with this username')
+				}
+				}
+				}
+				async function getRepos(username) {
+				try {
+				const { data } = await axios(APIURL + username + '/repos?sort=created')
+				addReposToCard(data)
+				} catch(err) {
+				createErrorCard('Problem fetching repos')
+				}
+				}
+				function createUserCard(user) {
+				const userID = user.name || user.login
+				const userBio = user.bio ? `<p>${user.bio}</p>` : ''
+				const cardHTML = `
+				<div class="card">
+				<div>
+				<img src="${user.avatar_url}" alt="${user.name}" class="avatar">
+				</div>
+				<div class="user-info">
+				<h2>${userID}</h2>
+				${userBio}
+				<ul>
+				<li>${user.followers} <strong>Followers</strong></li>
+				<li>${user.following} <strong>Following</strong></li>
+				<li>${user.public_repos} <strong>Repos</strong></li>
+				</ul>
+				<div id="repos"></div>
+				</div>
+				</div>
+				`
+				main.innerHTML = cardHTML
+				}
+				function createErrorCard(msg) {
+				const cardHTML = `
+				<div class="card">
+				<h1>${msg}</h1>
+				</div>
+				`
+				main.innerHTML = cardHTML
+				}
+				function addReposToCard(repos) {
+				const reposEl = document.getElementById('repos')
+				repos
+				.slice(0, 5)
+				.forEach(repo => {
+				const repoEl = document.createElement('a')
+				repoEl.classList.add('repo')
+				repoEl.href = repo.html_url
+				repoEl.target = '_blank'
+				repoEl.innerText = repo.name
+				reposEl.appendChild(repoEl)
+				})
+				}
+				form.addEventListener('submit', (e) => {
+				e.preventDefault()
+				const user = search.value
+				if(user) {
+				getUser(user)
+				search.value = ''
+				}
+				})
