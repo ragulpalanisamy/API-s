@@ -6,8 +6,8 @@ input.addEventListner("input", () => {
     box.style.background = input.value; 
 });
  */
-
-function generatePDF(){
+/* 
+document.getElementById("generatePDF").onclick = function{
     let doc = new jsPDF()
 
     let users = [
@@ -35,5 +35,20 @@ function generatePDF(){
 
     })
 
-    doc.save("output.pdf")
+    doc.save("Profile.pdf")
+} */
+var slides = document.querySelectorAll('.slide');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide,5000);
+
+function nextSlide() {
+	slides[currentSlide].className = 'slide';
+	currentSlide = (currentSlide+1)%slides.length;
+	slides[currentSlide].className = 'slide active';
+}
+
+function prevSlide() {
+	slides[currentSlide].className = 'slide';
+	currentSlide = (currentSlide-1+slides.length)%slides.length;
+	slides[currentSlide].className = 'slide active';
 }
