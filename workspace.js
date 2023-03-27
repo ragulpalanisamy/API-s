@@ -54,7 +54,7 @@ function prevSlide() {
 	slides[currentSlide].className = 'slide active';
 }
  */
-
+/* 
 const quizContainer = document.getElementById('quiz');
 const submitButton = document.getElementById('submit');
 
@@ -136,3 +136,20 @@ function showResults() {
 buildQuiz();
 
 submitButton.addEventListener('click', showResults);
+ */
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+  dropdown.addEventListener('click', (event) => {
+    event.stopPropagation();
+    dropdown.classList.toggle('active');
+  });
+});
+
+document.addEventListener('click', (event) => {
+  dropdowns.forEach(dropdown => {
+    if (dropdown.classList.contains('active') && !dropdown.contains(event.target)) {
+      dropdown.classList.remove('active');
+    }
+  });
+});
